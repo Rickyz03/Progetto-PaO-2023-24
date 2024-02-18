@@ -35,7 +35,7 @@ Per compilare AeroSimulator, clonare o scaricare questo repository, digita `qmak
  make
 ```
 
-Assicurare di avere Qt, make e un compilatore C++ installati e disponibili nel tuo percorso.
+Assicurati di avere Qt, make e un compilatore C++ installati e disponibili nel tuo percorso.
 
 Per eseguire l'applicazione, digita:
 
@@ -43,4 +43,4 @@ Per eseguire l'applicazione, digita:
 ./AeroSimulator
 ```
 
-Se si dispone di sistema operativo Ubuntu, è inoltre consigliato non utilizzare wayland come gestore delle finestre, per una migliore esperienza nell'uso dell'app. Per utilizzare un altro gestore, occorre mettere la spunta su `Ubuntu on Xorg` in basso a destra nella schermata di accesso al sistema.
+Se disponi di Ubuntu come sistema operativo, consiglio di non utilizzare wayland come gestore delle finestre, per una migliore esperienza nell'uso dell'app. Per utilizzare un altro gestore, in basso a destra nella schermata di accesso al sistema clicca sul tasto delle opzioni e metti la spunta su `Ubuntu on Xorg`; poi, accedi normalmente.
