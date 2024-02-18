@@ -1,0 +1,22 @@
+[
+    {
+        "id": 123456,
+        "lambda": 2,
+        "max_value": 10,
+        "mean": 35,
+        "min_value": 8,
+        "name": "Distance",
+        "type": "distanceCoveredSensor",
+        "variance": 5
+    },
+    {
+        "id": 123457,
+        "lambda": 9,
+        "max_value": 10,
+        "mean": 20,
+        "min_value": 9,
+        "name": "Flight time",
+        "type": "chronometer",
+        "variance": 9
+    }
+]

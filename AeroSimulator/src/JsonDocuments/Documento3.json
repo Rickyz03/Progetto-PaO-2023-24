@@ -1,0 +1,87 @@
+[
+    {
+        "id": 123456,
+        "lambda": 2,
+        "max_value": 25,
+        "mean": 23,
+        "min_value": 1,
+        "name": "DistanceCoveredSensor",
+        "type": "distanceCoveredSensor",
+        "variance": 4
+    },
+    {
+        "id": 123457,
+        "lambda": 7,
+        "max_value": 3,
+        "mean": 4,
+        "min_value": 2,
+        "name": "Chronometer",
+        "type": "chronometer",
+        "variance": 6
+    },
+    {
+        "chronometer": {
+            "id": 0,
+            "lambda": 4,
+            "max_value": 13,
+            "mean": 45,
+            "min_value": 4,
+            "name": "ChronoSubsensor",
+            "type": "chronometer",
+            "variance": 2
+        },
+        "distanceCoveredSensor": {
+            "id": 0,
+            "lambda": 4,
+            "max_value": 13,
+            "mean": 45,
+            "min_value": 4,
+            "name": "DistanceSubSensor",
+            "type": "distanceCoveredSensor",
+            "variance": 2
+        },
+        "id": 123458,
+        "name": "SpeedSensor",
+        "type": "speedSensor"
+    },
+    {
+        "chronometer": {
+            "id": 0,
+            "lambda": 2,
+            "max_value": 10,
+            "mean": 35,
+            "min_value": 1,
+            "name": "ChronoSubsensor",
+            "type": "chronometer",
+            "variance": 5
+        },
+        "id": 987654,
+        "name": "Accelerometer",
+        "speedSensor": {
+            "chronometer": {
+                "id": 0,
+                "lambda": 2,
+                "max_value": 10,
+                "mean": 35,
+                "min_value": 1,
+                "name": "ChronoSubSubSensor",
+                "type": "chronometer",
+                "variance": 5
+            },
+            "distanceCoveredSensor": {
+                "id": 0,
+                "lambda": 2,
+                "max_value": 10,
+                "mean": 35,
+                "min_value": 1,
+                "name": "DistanceSubSubSensor",
+                "type": "distanceCoveredSensor",
+                "variance": 5
+            },
+            "id": 987654,
+            "name": "Accelerometer",
+            "type": "speedSensor"
+        },
+        "type": "accelerometer"
+    }
+]

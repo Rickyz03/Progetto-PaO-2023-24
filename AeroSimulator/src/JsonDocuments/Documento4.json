@@ -1,0 +1,67 @@
+[
+    {
+        "chronometer": {
+            "id": 0,
+            "lambda": 2,
+            "max_value": 10,
+            "mean": 35,
+            "min_value": 1,
+            "name": "ChronoSubsensor",
+            "type": "chronometer",
+            "variance": 5
+        },
+        "id": 123410,
+        "name": "Acceleration",
+        "speedSensor": {
+            "chronometer": {
+                "id": 0,
+                "lambda": 2,
+                "max_value": 10,
+                "mean": 35,
+                "min_value": 1,
+                "name": "ChronoSubSubSensor",
+                "type": "chronometer",
+                "variance": 5
+            },
+            "distanceCoveredSensor": {
+                "id": 0,
+                "lambda": 2,
+                "max_value": 10,
+                "mean": 35,
+                "min_value": 1,
+                "name": "DistanceSubSubSensor",
+                "type": "distanceCoveredSensor",
+                "variance": 5
+            },
+            "id": 123410,
+            "name": "Acceleration",
+            "type": "speedSensor"
+        },
+        "type": "accelerometer"
+    },
+    {
+        "chronometer": {
+            "id": 0,
+            "lambda": 10,
+            "max_value": 23,
+            "mean": 89,
+            "min_value": 22,
+            "name": "ChronoSubsensor",
+            "type": "chronometer",
+            "variance": 7
+        },
+        "distanceCoveredSensor": {
+            "id": 0,
+            "lambda": 10,
+            "max_value": 23,
+            "mean": 89,
+            "min_value": 22,
+            "name": "DistanceSubSensor",
+            "type": "distanceCoveredSensor",
+            "variance": 7
+        },
+        "id": 123456,
+        "name": "Speed",
+        "type": "speedSensor"
+    }
+]
