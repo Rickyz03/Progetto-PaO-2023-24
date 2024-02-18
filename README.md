@@ -43,4 +43,4 @@ Per eseguire l'applicazione, digita:
 ./AeroSimulator
 ```
 
-Se si dispone di sistema operativo Ubuntu, è inoltre consigliato non utilizzare wayland come gestore delle finestre, per una migliore esperienza nell'uso dell'app. Per utilizzare un altro gestore, occorre mettere la spunta su `Ubuntu on Xorg` nella schermata di accesso al sistema.
+Se si dispone di sistema operativo Ubuntu, è inoltre consigliato non utilizzare wayland come gestore delle finestre, per una migliore esperienza nell'uso dell'app. Per utilizzare un altro gestore, occorre mettere la spunta su `Ubuntu on Xorg` in basso a destra nella schermata di accesso al sistema.
