@@ -26,7 +26,11 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # Copiare il codice sorgente nell'immagine Docker
-COPY /AeroSimulator/src .
+COPY . .
+
+# Spostarsi nella cartella da compilare
+RUN cd AeroSimulator
+RUN cd src
 
 # Compilare l'applicazione
 RUN qmake
