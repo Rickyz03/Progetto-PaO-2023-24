@@ -254,7 +254,7 @@ void AboveChartWidget::applyChangesSlot(){
     emit applyChangesSignal();
 }
 
-void AboveChartWidget::youCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors){
+void AboveChartWidget::nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors){
     emit finallyYouCanApplyChanges(sensors);
 }
 

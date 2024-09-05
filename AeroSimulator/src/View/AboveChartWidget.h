@@ -53,7 +53,7 @@ signals:
 public slots:
     void modifySlot();
     void applyChangesSlot();
-    void youCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
+    void nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
     void saveModifySlot(const std::string& name, const double& min_value, const double& max_value, const double& mean, const double& variance, 
                         const double& lambda);
     void nameModifiedSlot(const std::string& previousName, const std::string& newName);
