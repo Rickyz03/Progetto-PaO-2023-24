@@ -304,8 +304,7 @@ void SensorPanel::returnBackFromSearch()
 }
 
 void SensorPanel::handleSensorWidgetSelected(SensorWidget* sender) {
-    if (!sender) {
-        qWarning() << "Il puntatore al widget del sensore è nullo!";
+    if (!sender) { // Se il puntatore al widget del sensore è nullo
         return;
     }
 

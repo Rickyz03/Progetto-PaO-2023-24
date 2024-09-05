@@ -75,9 +75,7 @@ unsigned int SensorWidget::getId() const {
     unsigned int id = idLabel->text().right(6).toUInt(&ok);
     if (ok) {
         return id;
-    } else {
-        // Gestione dell'errore se il testo non è un numero intero valido
-        qWarning() << "ID non valido!";
+    } else {     // Se l'ID non è un numero intero valido
         throw std::exception();
     }
 }
@@ -95,8 +93,6 @@ void SensorWidget::setId(const int& id) {
 }
 
 void SensorWidget::setType(const QString& type) {
-    if(typeLabel==nullptr) 
-        qDebug()<<"Ciao";
     typeLabel->setText(QString("Tipo: %1").arg(type));
 }
 

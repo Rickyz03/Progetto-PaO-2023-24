@@ -176,9 +176,7 @@ unsigned int AboveChartWidget::getId() const {
         if (ok) {
             return id;
         } 
-        else {
-            // Gestione dell'errore se il testo non è un numero intero positivo valido
-            qWarning() << "ID non valido!";
+        else {   // Se l'ID non è un numero intero positivo valido
             throw std::exception();
         }
     }
