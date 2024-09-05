@@ -47,8 +47,8 @@ private:
     StatusBar* statusBar;
 
 signals:
-    void youCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
-    void youCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
+    void nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
+    void nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
 
 public slots:
     void closeEvent(QCloseEvent* event);

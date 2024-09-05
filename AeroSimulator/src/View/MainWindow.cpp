@@ -55,11 +55,11 @@ MainWindow::MainWindow(QWidget* parent)
     connect(sensorPanel, &SensorPanel::sensorSelected, this, &MainWindow::sensorSelectedHandler);
     connect(sensorPanel, &SensorPanel::sensorAdded, this, &MainWindow::sensorAddedHandler);
     connect(sensorPanel, &SensorPanel::createAndAddSensorSignal, this, &MainWindow::createAndAddSensorHandler);
-    connect(this, &MainWindow::youCanCheckIfNameAndIDAreUnique, sensorPanel, &SensorPanel::youCanCheckIfNameAndIDAreUnique);
+    connect(this, &MainWindow::nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique, sensorPanel, &SensorPanel::nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique);
 
     connect(aboveChartWidget, &AboveChartWidget::modifySignal, this, &MainWindow::modifyHandler);
     connect(aboveChartWidget, &AboveChartWidget::applyChangesSignal, this, &MainWindow::applyChangesHandler);
-    connect(this, &MainWindow::youCanCheckIfNameIsUnique, aboveChartWidget, &AboveChartWidget::youCanCheckIfNameIsUnique);
+    connect(this, &MainWindow::nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique, aboveChartWidget, &AboveChartWidget::nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique);
     connect(aboveChartWidget, &AboveChartWidget::saveModifySignal, this, &MainWindow::saveModifyHandler);
     connect(aboveChartWidget, &AboveChartWidget::setIsSaved, this, &MainWindow::setIsSaved);
     connect(aboveChartWidget, &AboveChartWidget::nameHasBeenModified, this, &MainWindow::nameModifiedHandler);
@@ -279,7 +279,7 @@ void MainWindow::sensorAddedHandler(Sensor::AbstractSensor* sensor){
 }
 
 void MainWindow::createAndAddSensorHandler(){
-    emit youCanCheckIfNameAndIDAreUnique(sensors);
+    emit nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique(sensors);
 }
 
 void MainWindow::modifyHandler(){
@@ -287,7 +287,7 @@ void MainWindow::modifyHandler(){
 }
 
 void MainWindow::applyChangesHandler(){
-    emit youCanCheckIfNameIsUnique(sensors);
+    emit nowIGiveYouTheSensorsSoYouCanCheckIfNameIsUnique(sensors);
 }
 
 void MainWindow::saveModifyHandler(const std::string& name, const double& min_value, const double& max_value, const double& mean, const double& variance, 

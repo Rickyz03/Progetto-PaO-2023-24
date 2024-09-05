@@ -61,7 +61,7 @@ public slots:
     void returnBackFromSearch();
     void addSensorSlot();
     void createAndAddSensorSlot();
-    void youCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
+    void nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors);
     void handleSensorWidgetSelected(SensorWidget* sender);
     void handleSensorAdded(Sensor::AbstractSensor* sensor);
 

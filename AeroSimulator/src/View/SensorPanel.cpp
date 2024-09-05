@@ -331,7 +331,7 @@ void SensorPanel::createAndAddSensorSlot(){
     emit createAndAddSensorSignal();
 }
 
-void SensorPanel::youCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors){
+void SensorPanel::nowIGiveYouTheSensorsSoYouCanCheckIfNameAndIDAreUnique(const std::vector<Sensor::AbstractSensor*>& sensors){
     emit finallyYouCanCreateAndAddSensor(sensors);
 }
 
