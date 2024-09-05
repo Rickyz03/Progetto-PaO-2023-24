@@ -29,11 +29,10 @@ RUN apt-get update && apt-get install -y \
 COPY . .
 
 # Spostarsi nella cartella da compilare
-RUN cd AeroSimulator
-RUN cd src
+RUN cd AeroSimulator/src
 
 # Compilare l'applicazione
-RUN qmake
+RUN qmake .
 RUN make
 
 # Eseguire l'applicazione
