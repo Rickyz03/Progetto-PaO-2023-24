@@ -139,11 +139,12 @@ void ModifySensorDialogueWindow::applyChanges(const std::vector<Sensor::Abstract
         return;
     }
 
-    bool isNameModified = false; // Flag to check if name is modified
+
+    bool isNameModified = false;         // Flag to check if name is modified
+    bool isSomethingModified = false;    // Flag to check if something is modified
 
     // Check if name is modified
     if (name != originalSensorName) {
-        isNameModified = true;
 
         // Check if the name is unique
         for (Sensor::AbstractSensor* sensor : sensors) {
@@ -152,44 +153,86 @@ void ModifySensorDialogueWindow::applyChanges(const std::vector<Sensor::Abstract
                 return;
             }
         }
+
+        // If is all ok
+        isNameModified = true;
+        isSomethingModified = true;
     }
 
-    // Validate min_value
-    if (min_value != originalMinValue && (min_value < 1.0 || min_value > 25.0)){
-        QMessageBox::critical(this, "Errore", "Il minimo deve essere compreso tra 1.0 e 25.0");
-        return;
+    // Check if min_value is modified
+    if (min_value != originalMinValue){
+
+        // Validate min_value
+        if(min_value < 1.0 || min_value > 25.0){
+            QMessageBox::critical(this, "Errore", "Il minimo deve essere compreso tra 1.0 e 25.0");
+            return;
+        }
+
+        // If is all ok
+        isSomethingModified = true;
     }
 
-    // Validate max_value
-    if (max_value != originalMaxValue && (max_value <= min_value || max_value > 25.0)){
-        QMessageBox::critical(this, "Errore", "Il massimo deve essere maggiore stretto del minimo e minore o uguale di 25.0");
-        return;
+    // Check if max_value is modified
+    if (max_value != originalMaxValue){
+
+        // Validate max_value
+        if(max_value <= min_value || max_value > 25.0){
+            QMessageBox::critical(this, "Errore", "Il massimo deve essere maggiore stretto del minimo e minore o uguale di 25.0");
+            return;
+        }
+
+        // If is all ok
+        isSomethingModified = true;
     }
 
-    // Validate mean
-    if (mean != originalMean && (mean < 1.0 || mean > 100.0)){
-        QMessageBox::critical(this, "Errore", "La media deve essere compresa tra 1.0 e 100.0");
-        return;
+    // Check if mean is modified
+    if (mean != originalMean){
+
+        // Validate mean
+        if(mean < 1.0 || mean > 100.0){
+            QMessageBox::critical(this, "Errore", "La media deve essere compresa tra 1.0 e 100.0");
+            return;
+        }
+
+        // If is all ok
+        isSomethingModified = true;
     }
 
-    // Validate variance
-    if (variance != originalVariance && (variance < 1.0 || variance > 10.0)){
+    // Check if variance is modified
+    if (variance != originalVariance){
+
+        // Validate variance
+        if(variance < 1.0 || variance > 10.0){
         QMessageBox::critical(this, "Errore", "La varianza deve essere compresa tra 1.0 e 10.0");
         return;
+        }
+
+        // If is all ok
+        isSomethingModified = true;
     }
 
-    // Validate lambda
-    if (lambda != originalLambda && (lambda < 1.0 || lambda > 10.0)){
-        QMessageBox::critical(this, "Errore", "La lambda deve essere compresa tra 1.0 e 10.0");
-        return;
+    // Check if lambda is modified
+    if (lambda != originalLambda){
+
+        // Validate lambda
+        if(lambda < 1.0 || lambda > 10.0){
+            QMessageBox::critical(this, "Errore", "La lambda deve essere compresa tra 1.0 e 10.0");
+            return;
+        }
+
+        // If is all ok
+        isSomethingModified = true;
     }
 
-    // Emit signal with modified sensor details
-    emit sensorModified(name, min_value, max_value, mean, variance, lambda);
 
-    // Emit signal if the name is modified
+    // Emit signal if something is modified, to update both the sensor object and AboveChartWidget's visualization data. "isSaved = false" will be set.
+    if(isSomethingModified)
+        emit sensorModified(name, min_value, max_value, mean, variance, lambda);
+
+    // Emit signal if the name is modified, to update SensorPanel's name of the sensor
     if (isNameModified)
         emit sensorNameModified(originalSensorName, name);
+
 
     // Close the dialog
     accept();

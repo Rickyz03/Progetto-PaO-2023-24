@@ -5,7 +5,7 @@
             "lambda": 2,
             "max_value": 10,
             "mean": 35,
-            "min_value": 2,
+            "min_value": 3,
             "name": "ChronoSubsensor",
             "type": "chronometer",
             "variance": 5
@@ -18,7 +18,7 @@
                 "lambda": 2,
                 "max_value": 10,
                 "mean": 35,
-                "min_value": 2,
+                "min_value": 3,
                 "name": "ChronoSubSubSensor",
                 "type": "chronometer",
                 "variance": 5
@@ -28,7 +28,7 @@
                 "lambda": 2,
                 "max_value": 10,
                 "mean": 35,
-                "min_value": 2,
+                "min_value": 3,
                 "name": "DistanceSubSubSensor",
                 "type": "distanceCoveredSensor",
                 "variance": 5
