@@ -63,7 +63,7 @@ Una volta soddisfatta la nuova dipendenza, per creare l'immagine segui le istruz
  sudo docker build -t aerosimulator .
 ```
 
-Per eseguire l'app in un container dell'immagine appena creata digita:
+Per eseguire l'app in un container dell'immagine appena creata:
 ```bash
  xhost +local:docker
  sudo docker run -e DISPLAY=$DISPLAY \

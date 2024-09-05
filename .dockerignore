@@ -31,6 +31,6 @@
 *.out
 *.app
 
-# qMake stuffs and executable
+# qMake stuffs
 Makefile
 .qmake.stash
