@@ -17,6 +17,7 @@ Gli altri sensori, pur non indicando direttamente lo stato di sviluppo dell'aere
 I grafici sono tutti realizzati attraverso QtCharts.
 <br/>
 La persistenza dei dati è realizzata tramite file JSON: un singolo file rappresenta i sensori utilizzati in un determinato centro di collaudo.
+
 <hr/>
 
 ## Tecnologie usate
@@ -55,7 +56,7 @@ Se disponi di Ubuntu come sistema operativo, consiglio di non utilizzare wayland
 <hr/>
 
 ## Istruzioni per l'esecuzione su Docker
-Per eseguire AeroSimulator su Docker, occorre avere il deamon Docker installato e attivo.
+Per eseguire AeroSimulator su Docker, occorre avere il deamon Docker installato e attivo.  
 Una volta soddisfatta la nuova dipendenza, per creare l'immagine segui le istruzioni:
 
 ```bash
