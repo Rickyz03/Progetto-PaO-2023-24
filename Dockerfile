@@ -3,10 +3,7 @@ FROM ubuntu:22.04
 
 # Installare le dipendenze necessarie
 RUN apt-get update && apt-get install -y \
-    qtbase5-dev \
-    qtchooser \
-    qt5-qmake \
-    qtbase5-dev-tools \
+    build-essential \
     libqt5charts5-dev \
     libqt5core5a \
     libqt5gui5 \
@@ -22,7 +19,10 @@ RUN apt-get update && apt-get install -y \
     libxfixes-dev \
     libxcursor-dev \
     libxinerama-dev \
-    build-essential \
+    qtbase5-dev \
+    qtchooser \
+    qt5-qmake \
+    qtbase5-dev-tools \
     && apt-get clean
 
 # Copiare il repository nell'immagine Docker, e spostarsi nella directory dei sorgenti
