@@ -55,7 +55,7 @@ Se disponi di Ubuntu come sistema operativo, consiglio di non utilizzare wayland
 
 <hr/>
 
-## Istruzioni per l'esecuzione su Docker
+## Istruzioni per l'esecuzione su Docker per Linux
 Per eseguire AeroSimulator su Docker, occorre avere il deamon Docker installato e attivo.  
 Una volta soddisfatta la nuova dipendenza, per creare l'immagine segui le istruzioni:
 
@@ -74,3 +74,27 @@ Per eseguire l'app in un container dell'immagine appena creata:
                 --device /dev/snd \
                 aerosimulator
 ```
+
+<hr/>
+
+## Istruzioni per l'esecuzione su Docker per Windows
+Per eseguire AeroSimulator su Docker su Windows, occorre avere Docker Desktop installato e attivo.  
+Una volta soddisfatta la dipendenza, per creare l'immagine segui le istruzioni:
+
+```bash
+ git clone https://github.com/Rickyz03/Progetto-PaO-2023-24.git
+ cd Progetto-PaO-2023-24
+ docker build -t aerosimulator .
+```
+
+Per eseguire l'app in un container dell'immagine appena creata, dovrai prima installare un X11 server per Windows come [VcXsrv](https://sourceforge.net/projects/vcxsrv/) o [Xming](https://sourceforge.net/projects/xming/).
+
+Dopo aver installato e avviato il server X11:
+
+```bash
+ docker run -e DISPLAY=host.docker.internal:0.0 \
+            --add-host=host.docker.internal:host-gateway \
+            aerosimulator
+```
+
+**Nota per Windows:** Assicurati che il tuo X11 server sia configurato per accettare connessioni da client esterni e che Windows Firewall non blocchi le connessioni.
