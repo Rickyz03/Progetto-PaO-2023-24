@@ -100,9 +100,9 @@ Prima di eseguire l'applicazione, è necessario installare un server X11 per Win
    - **Extra settings**: 
      - ✅ Spunta "Clipboard"
      - ✅ Spunta "Primary Selection" 
-     - ✅ **IMPORTANTE**: Spunta "Disable access control" (necessario per Docker)
      - ✅ Spunta "Native opengl"
-   - Clicca "Next" e poi "Finish"
+     - ✅ **IMPORTANTE**: Spunta "Disable access control" (necessario per Docker)
+   - Clicca "Avanti" e poi "Fine"
 
 5. **Verifica che VcXsrv sia in esecuzione**: Dovresti vedere l'icona di VcXsrv nella system tray (area di notifica)
 
@@ -111,9 +111,7 @@ Prima di eseguire l'applicazione, è necessario installare un server X11 per Win
 Dopo aver configurato e avviato VcXsrv:
 
 ```bash
- docker run -e DISPLAY=host.docker.internal:0.0 \
-            --add-host=host.docker.internal:host-gateway \
-            aerosimulator
+ docker run -e DISPLAY=host.docker.internal:0.0 --add-host=host.docker.internal:host-gateway aerosimulator
 ```
 
 **Nota per Windows:** Assicurati che il tuo X11 server sia configurato per accettare connessioni da client esterni e che Windows Firewall non blocchi le connessioni.
