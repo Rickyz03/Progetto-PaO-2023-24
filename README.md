@@ -87,9 +87,28 @@ Una volta soddisfatta la dipendenza, per creare l'immagine segui le istruzioni:
  docker build -t aerosimulator .
 ```
 
-Per eseguire l'app in un container dell'immagine appena creata, dovrai prima installare un X11 server per Windows come [VcXsrv](https://sourceforge.net/projects/vcxsrv/) o [Xming](https://sourceforge.net/projects/xming/).
+### Installazione e configurazione del server X11 (VcXsrv)
 
-Dopo aver installato e avviato il server X11:
+Prima di eseguire l'applicazione, è necessario installare un server X11 per Windows. Ti consigliamo VcXsrv:
+
+1. **Scarica VcXsrv** dal sito ufficiale: [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/)
+2. **Installa VcXsrv** seguendo la procedura guidata standard
+3. **Avvia XLaunch** (dovrebbe essere disponibile nel menu Start dopo l'installazione)
+4. **Configura XLaunch** seguendo questi passaggi:
+   - **Display settings**: Seleziona "Multiple windows" e lascia il Display number a -1
+   - **Client startup**: Seleziona "Start no client"
+   - **Extra settings**: 
+     - ✅ Spunta "Clipboard"
+     - ✅ Spunta "Primary Selection" 
+     - ✅ **IMPORTANTE**: Spunta "Disable access control" (necessario per Docker)
+     - ✅ Spunta "Native opengl"
+   - Clicca "Next" e poi "Finish"
+
+5. **Verifica che VcXsrv sia in esecuzione**: Dovresti vedere l'icona di VcXsrv nella system tray (area di notifica)
+
+### Esecuzione dell'applicazione
+
+Dopo aver configurato e avviato VcXsrv:
 
 ```bash
  docker run -e DISPLAY=host.docker.internal:0.0 \
